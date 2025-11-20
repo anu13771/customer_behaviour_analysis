@@ -1,154 +1,170 @@
-<div align="center">
+🛒 Customer Shopping Behavior Analysis
+End-to-End Data Analytics Project using Python, SQL & Power BI
 
-# 🛒 **Customer Behavior Analysis**  
-### **SQL • Python • Power BI**
+This project delivers a complete analytical workflow — from raw data exploration to business intelligence dashboarding — to uncover key patterns in customer purchasing behavior, product performance, discount usage, and revenue drivers.
+It is designed as a real-world, industry-grade analytics case study suitable for portfolio presentation, academic submissions, and interview discussions.
 
-A complete end-to-end data analysis project exploring customer purchasing patterns, product ratings, and behavioral insights using real-world data.
+🚀 Project Highlights
 
----
+Performed data cleaning, imputation, and feature engineering in Python
 
-### 🔗 **Project Files**
-📌 **SQL Queries:** `customer_behavior_sql_queries.sql`  
-📌 **Power BI Dashboard:** `customer_behavior_dashboard.pbix`  
-📌 **Python Notebook:** `customer_behavior_analysis.ipynb`
+Designed a relational database pipeline using PostgreSQL
 
-</div>
+Executed deep-dive SQL analysis to derive business insights
 
----
+Developed a Power BI dashboard for interactive visualization
 
-## 🚀 **1. Project Overview**
+Generated strategic recommendations for data-driven decision-making
 
-This project uncovers customer insights such as:
+📂 Project Assets
+File	Description
+customer_behavior_analysis.ipynb	Python EDA & preprocessing notebook
+customer_behavior_sql_queries.sql	Insights-driven SQL query collection
+customer_behavior_dashboard.pbix	Interactive Power BI dashboard
+Customer-Shopping-Behavior-Analysis.pptx	Presentation summarizing findings
+📊 Dataset Overview
 
-- ⭐ **Top-rated products**
-- 🛍️ **Most purchased items**
-- 👥 **Customer segmentation**
-- 📅 **Monthly buying trends**
-- 📦 **Sales distribution**
-- 🧹 **Data cleaning & preprocessing**
+Rows: 3,900
 
-Data was processed using **PostgreSQL**, analyzed in **Python**, and visualized through a fully interactive **Power BI Dashboard**.
+Columns: 18
 
----
+Domain: Retail / E-commerce
 
-## 🗄️ **2. SQL Analysis (PostgreSQL)**
+Missing Values: 37 (in review_rating)
 
-All SQL queries are available here:  
-👉 **`customer_behavior_sql_queries.sql`**
+Key Data Dimensions
 
-### 🔹 Example Query — Top 5 Highest Rated Products:
-```sql
-SELECT item_purchased,
-       ROUND(AVG(review_rating)::numeric, 2) AS avg_rating
-FROM customer
-GROUP BY item_purchased
-ORDER BY avg_rating DESC
-LIMIT 5;
+Customer demographics
 
+Product category & attributes
 
-🐍 3. Python Analysis (Jupyter Notebook)
+Purchase amounts, discounts & shipping type
 
-Python was used for:
+Behavioral indicators (previous purchases, frequency)
 
-📥 Pulling data from PostgreSQL
+Ratings & reviews
 
-🧼 Cleaning & preprocessing
+🐍 Python: Data Preparation & Feature Engineering
+✔ Data Cleaning
 
-📊 Exploratory Data Analysis (EDA)
+Standardized all column names to snake_case
 
-📈 Visualizing customer behavior
+Converted datatypes and handled inconsistent formats
 
-🔹 Example Python Code
-import pandas as pd
-import psycopg2
-import matplotlib.pyplot as plt
+✔ Missing Value Treatment
 
-# Connect to PostgreSQL
-conn = psycopg2.connect(
-    host="localhost",
-    database="customer_behaviour",
-    user="postgres",
-    password="your_password"
-)
+Imputed missing review_rating values using category-wise median
 
-# Load data
-df = pd.read_sql("SELECT * FROM customer;", conn)
+✔ Feature Engineering
 
-# Display sample
-print(df.head())
+Created age_group buckets
 
-# Plot average rating per product
-avg_rating = df.groupby("item_purchased")["review_rating"].mean()
-avg_rating.plot(kind="bar", figsize=(10,5))
+Derived purchase_frequency_days
 
-plt.title("Average Rating by Product")
-plt.xlabel("Product")
-plt.ylabel("Rating")
-plt.show()
+Encoded categorical variables for modeling & SQL compatibility
 
-📊 4. Power BI Dashboard
+✔ Database Integration
 
-The interactive dashboard is included:
+Exported cleaned dataset into PostgreSQL for analytical querying
 
-👉 customer_behavior_dashboard.pbix
+🛢️ SQL Analysis: Key Insights
+💰 Revenue Contribution by Gender
 
-Dashboard Includes:
+Male: $157,890
 
-⭐ KPI Summary
+Female: $75,191
 
-📦 Top Products
+⭐ Top-Rated Products
+Rank	Product	Avg Rating
+1	Gloves	3.86
+2	Sandals	3.84
+3	Boots	3.82
+4	Hat	3.80
+5	Skirt	3.78
+🚚 Customer Spend by Shipping Type
+Shipping Type	Avg Spend
+Express	$60.48
+Standard	$58.46
+📦 Subscribers vs Non-Subscribers
+Group	Count	Avg Spend
+Subscribers	1053	$59.49
+Non-Subscribers	2847	$59.87
+🏷️ Discount-Dependent Products
 
-⭐ Average Rating Analysis
+Products with the highest proportion of discounted purchases:
 
-📅 Time-Based Trends
+Hat (50%)
+
+Sneakers (49.66%)
+
+Coat (49.07%)
+
+Sweater (48.17%)
+
+Pants (47.37%)
 
 👥 Customer Segmentation
+Segment	Count
+Loyal	3,116
+Returning	701
+New	83
+💸 Revenue by Age Group
+Age Group	Revenue
+Young Adult	$62,143
+Middle-Aged	$59,197
+Adult	$55,978
+Senior	$55,763
+📊 Power BI Dashboard
 
-🎛️ Filters & Slicers for Exploration
+An interactive dashboard showcasing:
 
-🛠 5. Technologies Used
-Technology	Purpose
-PostgreSQL	Database & SQL analysis
-Python	Data cleaning & EDA
-Pandas	Data manipulation
-Matplotlib	Visualizations
-Power BI	Dashboard & insights
-Jupyter Notebook	Interactive exploration
-GitHub	Version control
-▶️ 6. How to Run This Project
-1️⃣ Clone the Repository
-git clone https://github.com/your-username/your-repo-name.git
+Revenue trends
 
-2️⃣ Run SQL Queries
+Product performance
 
-Open PostgreSQL and execute:
+Customer segmentation
 
-customer_behavior_sql_queries.sql
+Shipping preferences
 
-3️⃣ Run the Python Notebook
+Discount behavior
 
-Open:
+Rating distributions
 
-customer_behavior_analysis.ipynb
+The dashboard is designed for executive-level decision-making with clean KPIs and drill-down capabilities.
 
-4️⃣ Open the Power BI Dashboard
+💼 Business Recommendations
+1. Strengthen Loyalty & Retention
 
-Double-click:
+Introduce rewards, tiered benefits, and exclusive access for repeat customers
 
-customer_behavior_dashboard.pbix
+2. Optimize Discount Strategy
 
-🔍 7. Key Insights
+Reduce discounts on high-demand items like hats, sneakers & coats
 
-✔ Products with consistently high ratings
-✔ Strong correlation between categories & ratings
-✔ Clear monthly seasonality in purchases
-✔ Top 10 customers drive major sales
-✔ Customer preferences visible through item patterns
+Use personalized promotions instead of blanket discounts
 
-<div align="center">
-👩‍💻 Author
-Anushka Gupta
+3. Boost Subscription Adoption
 
-Data Analyst • SQL • Python • Power BI
+Offer free shipping or early access to products for subscribers
 
-</div>
+4. Promote High-Rated Products
+
+Highlight gloves, sandals, boots & hats in campaigns
+
+Bundle complementary products for upselling
+
+5. Target High-Revenue Segments
+
+Focus marketing on Young Adults and Express-shipping users
+
+🧰 Tech Stack
+
+Python: Pandas, NumPy, Matplotlib
+
+SQL: PostgreSQL
+
+Business Intelligence: Power BI
+
+Versioning & Docs: GitHub, Markdown
+
+
