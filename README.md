@@ -1,28 +1,34 @@
-🛒 Customer Shopping Behavior Analysis
+### **🛒 Customer Shopping Behavior Analysis**
 End-to-End Data Analytics Project using Python, SQL & Power BI
 
 This project delivers a complete analytical workflow — from raw data exploration to business intelligence dashboarding — to uncover key patterns in customer purchasing behavior, product performance, discount usage, and revenue drivers.
 It is designed as a real-world, industry-grade analytics case study suitable for portfolio presentation, academic submissions, and interview discussions.
 
-🚀 Project Highlights
+<img width="1373" height="737" alt="image" src="https://github.com/user-attachments/assets/36940b30-a59a-42e8-9e41-d131c138809c" />
 
-Performed data cleaning, imputation, and feature engineering in Python
+---
 
-Designed a relational database pipeline using PostgreSQL
+### **🚀 Project Highlights**
 
-Executed deep-dive SQL analysis to derive business insights
+- Performed data cleaning, imputation, and feature engineering in Python
+- Designed a relational database pipeline using PostgreSQL
+- Executed deep-dive SQL analysis to derive business insights
+- Developed a Power BI dashboard for interactive visualization
+- Generated strategic recommendations for data-driven decision-making
 
-Developed a Power BI dashboard for interactive visualization
+---
 
-Generated strategic recommendations for data-driven decision-making
+### **📂 Project Assets**
 
-📂 Project Assets
-File	Description
-customer_behavior_analysis.ipynb	Python EDA & preprocessing notebook
-customer_behavior_sql_queries.sql	Insights-driven SQL query collection
-customer_behavior_dashboard.pbix	Interactive Power BI dashboard
-Customer-Shopping-Behavior-Analysis.pptx	Presentation summarizing findings
-📊 Dataset Overview
+File	Description : 
+- customer_behavior_analysis.ipynb	Python EDA & preprocessing notebook
+- customer_behavior_sql_queries.sql	Insights-driven SQL query collection
+- customer_behavior_dashboard.pbix	Interactive Power BI dashboard
+- Customer-Shopping-Behavior-Analysis.pptx	Presentation summarizing findings
+
+--- 
+
+### **📊 Dataset Overview**
 
 Rows: 3,900
 
@@ -44,7 +50,10 @@ Behavioral indicators (previous purchases, frequency)
 
 Ratings & reviews
 
-🐍 Python: Data Preparation & Feature Engineering
+---
+
+### **🐍 Python: Data Preparation & Feature Engineering**
+
 ✔ Data Cleaning
 
 Standardized all column names to snake_case
@@ -67,7 +76,10 @@ Encoded categorical variables for modeling & SQL compatibility
 
 Exported cleaned dataset into PostgreSQL for analytical querying
 
-🛢️ SQL Analysis: Key Insights
+---
+
+### **🛢️ SQL Analysis: Key Insights**
+
 💰 Revenue Contribution by Gender
 
 Male: $157,890
